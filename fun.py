@@ -29,3 +29,10 @@ def data_date(data):
 		data[i][2]=datetime.strptime(data[i][2],'%I:%M%p')
 		data[i][3]=datetime.strptime(data[i][3],'%I:%M%p')
 	return data
+
+
+def appointments(data_date):
+	appointments = []
+	for i in range(1,len(data_date)):
+		appointments.append((data_date[1][2],data_date[1][3]))
+	return appointments
