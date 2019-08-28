@@ -8,9 +8,13 @@ from fun import group_rooms
 from fun import grouped_times
 from timeslots import get_slots
 from fun import data_date
-data  = read_data2()
+from fun import get_data_today_pop
+from fun import get_data_today
+data_o  = read_data2()
+day = 'Mo'
+data1 = get_data_today_pop(data_o,day)
 from datetime import *
-data2 = data_date(data)
+data2 = data_date(data1)
 appoint = appointments_v2(data2)
 room = room_list(appoint)
 room = Remove(room)

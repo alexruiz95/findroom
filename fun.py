@@ -29,7 +29,7 @@ from datetime import *
 
 
 def data_date(data):
-	for i in range(1,len(data)):
+	for i in range(0,len(data)):
 		data[i][2]=datetime.strptime(data[i][2],'%I:%M%p')
 		data[i][3]=datetime.strptime(data[i][3],'%I:%M%p')
 	return data
@@ -54,7 +54,7 @@ def Remove(duplicate):
 
 def room_list(data):
 	rooms = []
-	for i in range(1,len(data)):
+	for i in range(0,len(data)):
 		rooms.append(data[i][0])
 	rooms.sort()
 	return rooms
@@ -63,7 +63,7 @@ def room_list(data):
 
 
 def appointments_v2(data_date):
-	for i in range(1,len(data_date)):
+	for i in range(0,len(data_date)):
 		data_date[i].append((data_date[i][2],data_date[i][3]))
 	return data_date
 
@@ -132,7 +132,7 @@ def grouped_times(grouped_rooms):
 		for rms in group:
 			#print(rms[0])
 			# print(rms[4])
-
+			# changed this form 4 to
 			tmp.append(rms[4])
 			#print(tmp)
 		#print('new')
@@ -166,3 +166,63 @@ def grouped_times(grouped_rooms):
 # hours =  (datetime(1900, 1, 1, 1, 0), datetime(1900, 1, 1, 23, 0))
 # get_slots(hours, rm_times[1][0], duration=timedelta(hours=1))
 
+
+# sort list to day
+# today=[]
+# for line in data:
+# 	for element in line:
+# 		if 'Mo' in element:
+# 			print('yes')
+# 			today.append(line)
+# 		else:
+# 			print('NO')
+#
+# today=[]
+# for line in data:
+# 	if 'Mo' in line[1]:
+# 		print('yes')
+# 		today.append(line)
+# 	else:
+# 		print('NO')
+#
+#
+# for element in line:
+# 	print(element)
+#
+# x=datetime.utcnow()
+# day = datetime.strftime(x,'%a')
+# day =  day[:2]
+
+# this is good to go but wouldnt use during testing
+
+def get_data_today(data,day):
+	# x = datetime.utcnow()
+	# day = datetime.strftime(x, '%a')
+	# day = day[:2]
+	# day = 'Tu'
+	today = []
+	for line in data:
+		if day in line[1]:
+			#print('yes')
+			today.append(line)
+		else:
+			print('pass')
+	return today
+
+def get_data_today_pop(data,day):
+	# x = datetime.utcnow()
+	# day = datetime.strftime(x, '%a')
+	# day = day[:2]
+	# day = 'Tu'
+	today = []
+	k=-1
+	for line in data:
+		k=k+1
+		if day in line[1]:
+			#print('yes')
+			pass
+			#today.append(line)
+		else:
+			data.pop(k)
+			print('%d:poped' % k)
+	return data
