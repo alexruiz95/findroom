@@ -9,9 +9,20 @@ def read_data():
 
 def read_data2():
 	import csv
-	with open("C:\\Users\\alex\\PycharmProjects\\untitled8\\findroom\\test_data_room2.csv",newline='') as csvfile:
+	with open("C:\\Users\\alex\\PycharmProjects\\untitled8\\findroom\\test_data_3.csv",newline='') as csvfile:
 #		data = list(csv.reader(csvfile))
 		return list(csv.reader(csvfile))
+
+def read_data3():
+	import csv
+	tmp_data = list(csv.reader(open("C:\\Users\\alex\\PycharmProjects\\untitled8\\findroom\\test_data_3.csv", newline=''), delimiter='\t'))
+	return tmp_data
+
+# def read_data4():
+# 	import csv
+# 	with open("C:\\Users\\alex\\PycharmProjects\\untitled8\\findroom\\test_data_3.csv",newline='') as csvfile:
+# 		return list(csv.reader(csvfile, delimiter='\t'))
+
 
 # a=data[1][2]
 # b=datetime.strptime(a,'%I:%M%p;)
