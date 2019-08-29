@@ -11,8 +11,8 @@ from fun import data_date
 from fun import get_data_today_new
 from fun import get_data_today_pop
 from fun import get_data_today
-data_o  = read_data2()
-day = 'Fr'
+data_o = read_data2()
+day = 'Mo'
 data1 = get_data_today_new(data_o,day)
 from datetime import *
 data2 = data_date(data1)
@@ -23,10 +23,11 @@ rows = appoint
 grouped_rooms = group_rooms(rows,room)
 grouped_time = grouped_times(grouped_rooms)
 from datetime import datetime, timedelta
-hours =  (datetime(1900, 1, 1, 1, 0), datetime(1900, 1, 1, 23, 0))
+#hours =  (datetime(1900, 1, 1, 1, 0), datetime(1900, 1, 1, 23, 0))
+hours =  (datetime(1900, 1, 1, 1, 0), datetime(1900, 1, 1, 20, 0))
 
 i = 0
 for event in grouped_time:
     print(grouped_time[i][0][0][0])
-    get_slots(hours, grouped_time[i][1], duration=timedelta(hours=1))
+    get_slots(hours, grouped_time[i][1], duration=timedelta(hours=2))
     i = i + 1

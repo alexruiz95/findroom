@@ -16,3 +16,11 @@ with open('C:\\Users\\alex\\PycharmProjects\\untitled8\\findroom\\test_data_room
     for room in new_data:
         csv_app.writerow(room[1:])
 
+import pandas as pd
+
+# this opens the csv and removes duplicates
+
+
+df = pd.read_csv('C:\\Users\\alex\\PycharmProjects\\untitled8\\findroom\\test_data_room2.csv')
+df.drop_duplicates(inplace=True)
+df.to_csv('C:\\Users\\alex\\PycharmProjects\\untitled8\\findroom\\test_data_room2.csv', index=False)
