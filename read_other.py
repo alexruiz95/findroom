@@ -44,40 +44,49 @@ def sort_csv(tmp_data):
         # test = [A5[4][1:], A5[0], A5[1], A5[2]]
         new_data.append([A[3],A[4][1:], A[0], A[1], A[2]])
     return new_data
-data = sort_csv(tmp_data)
+#data = sort_csv(tmp_data)
 
 
-def room_pop(new_data, building):
-    # x = datetime.utcnow()
-    # day = datetime.strftime(x, '%a')
-    # day = day[:2]
-    # day = 'Tu'
-    today = []
-    k = -1
-    for line in new_data:
-        k = k + 1
-        print(line)
-        if building not in line[0]:
-            print(line[0])
-            #pass
-            new_data.pop(k)
-        # today.append(line)
-        else:
-            pass
-            # data.pop(k)
-            # print('%d:poped:%s' % (k, line))
+# def room_pop(new_data, building):
+#     # x = datetime.utcnow()
+#     # day = datetime.strftime(x, '%a')
+#     # day = day[:2]
+#     # day = 'Tu'
+#     today = []
+#     k = -1
+#     for line in new_data:
+#         k = k + 1
+#         print(line)
+#         if building not in line[0]:
+#             print(line[0])
+#             #pass
+#             new_data.remove(k)
+#         # today.append(line)
+#         else:
+#             pass
+#             # data.pop(k)
+#             # print('%d:poped:%s' % (k, line))
+#
+#     return new_data
 
-    return new_data
+def get_building_rooms(data,building):
+    return [row for row in data if building in row]
 
 
-new_data = room_pop(data,'TA')
-new_data = room_pop(new_data,'TA')
-new_data = room_pop(new_data,'TA')
-new_data = room_pop(new_data,'TA')
-print(new_data)
+# new_data = get_building_rooms(data,'TA')
+# new_data = room_pop(new_data,'TA')
+# new_data = room_pop(new_data,'TA')
+# new_data = room_pop(new_data,'TA')
+# print(new_data)
 # for item in new_data:
 # #     print(new_data)
 # for item in new_data:
 #     if 'TA' in item:
 
-
+# import csv
+#
+# with open('C:\\Users\\alex\\PycharmProjects\\untitled8\\findroom\\test_data_room2.csv', 'a') as csv_file:
+#     csv_app = csv.writer(csv_file)
+#     #csv_app.writerows(new_data)
+#     for room in new_data:
+#         csv_app.writerow(room[1:])

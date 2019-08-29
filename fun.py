@@ -9,7 +9,7 @@ def read_data():
 
 def read_data2():
 	import csv
-	with open("C:\\Users\\alex\\PycharmProjects\\untitled8\\findroom\\test_data_3.csv",newline='') as csvfile:
+	with open("C:\\Users\\alex\\PycharmProjects\\untitled8\\findroom\\test_data_room2.csv",newline='') as csvfile:
 #		data = list(csv.reader(csvfile))
 		return list(csv.reader(csvfile))
 
@@ -237,3 +237,7 @@ def get_data_today_pop(data,day):
 			data.pop(k)
 			print('%d:poped' % k)
 	return data
+
+
+def get_data_today_new(data,day):
+    return [row for row in data if day in row[1]]
