@@ -6,5 +6,5 @@ def get_slots(hours, appointments, duration=timedelta(hours=1)):
         assert start <= end, "Cannot attend all appointments"
         while start + duration <= end:
            # print("{:%H:%M} - {:%H:%M}".format(start, start + duration))
-            print("{:%H:%M %p} - {:%H:%M %p}".format(start, start + duration))
+            print("{:%I:%M %p} - {:%I:%M %p}".format(start, start + duration))
             start += duration

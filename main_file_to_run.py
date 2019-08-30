@@ -12,7 +12,7 @@ from fun import get_data_today_new
 from fun import get_data_today_pop
 from fun import get_data_today
 data_o = read_data2()
-day = 'Mo'
+day = 'Tu'
 data1 = get_data_today_new(data_o,day)
 from datetime import *
 data2 = data_date(data1)
